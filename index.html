@@ -22,9 +22,11 @@
 					<input id="toggle-all" class="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
 					<label for="toggle-all">Mark all as complete</label>
 					<ul class="todo-list">
+						<!-- add filter for showing only selected tags if any -->
 						<li ng-repeat="todo in todos | filter : filterTags | filter:statusFilter track by $index " ng-class="{completed: todo.completed, editing: todo == editedTodo}">
 							<div class="view">
 								<input class="toggle" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
+								<!-- add tag into display of todo item -->
 								<label ng-dblclick="editTodo(todo)"><span ng-repeat="tag in todo.tags" style="color: #b4b4b4" ng-click="toggleFilterTags(tag)"> {{tag}} </span> {{todo.title}}</label>
 								<button class="destroy" ng-click="removeTodo(todo)"></button>
 							</div>
@@ -48,7 +50,8 @@
 						<li>
 							<a ng-class="{selected: status == 'completed'}" href="#/completed">Completed</a>
 						</li>
-						<li ng-if="activeTags.length > 0"> filters: {{activeTags.toString()}} </li>
+						<!-- show which tags are shown -->
+						<li ng-if="activeTags.length > 0"> <i>showing</i> {{activeTags.toString()}} </li>
 					</ul>
 					<button class="clear-completed" ng-click="clearCompletedTodos()" ng-show="completedCount">Clear completed</button>
 				</footer>

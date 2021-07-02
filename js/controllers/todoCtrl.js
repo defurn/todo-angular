@@ -29,8 +29,8 @@ angular.module('todomvc')
 		});
 
 		$scope.addTodo = function () {
+			// added tags and display field to separate tags from title input using parsedTitle()
 			const parsedTitle = $scope.parseTags($scope.newTodo.trim())
-			
 			var newTodo = {
 				title: parsedTitle.title,
 				completed: false,
@@ -51,27 +51,28 @@ angular.module('todomvc')
 					$scope.saving = false;
 				});
 		};
-
+		
+		// filters out tags from text from title input
+		// returns new item object which includes the title and tags, 
+		// and display that shows original input 
 		$scope.parseTags = function (todoText) {
-			// not fully vetted regex...
-
+			// not fully tested/vetted regex...
 			let item = {display: todoText}
 			let regex = /\#\S*(\s*|\#|$)/g
 			let tags = todoText.match(regex)
 			if (tags == null) { 
 				item.title = todoText.trim()
 				item.tags = null
-
 			} else {
 				let trimTags = tags.map((tag) => { return tag.trim() })
 				let title = todoText.replace(regex, '').trim()
 				item.title = title.trim()
 				item.tags = trimTags
-
 			}
 			return item
 		}
 
+		// toggle whether/which tags are being filterd, modifies activeTags array
 		$scope.toggleFilterTags = function (tag) {
 			let i = $scope.activeTags.indexOf(tag)
 			if (i < 0) {
@@ -82,9 +83,12 @@ angular.module('todomvc')
 			return $scope.activeTags
 		}
 
+		// filter for view, checks if tag is in activeTags
+		// TODO: move to module.filters
 		$scope.filterTags = function(todo) {
 			// default is to display all tags, if filter list is empty
 			if ($scope.activeTags.length == 0) { return true }
+			// but if filter is on and tag has no filter, don't show it
 			if (todo.tags == null) { return false }
 			var inList = false
 			todo.tags.forEach((tag) => {
@@ -95,9 +99,6 @@ angular.module('todomvc')
 			})
     		return inList
 		};
-
-
-
 
 
 		$scope.editTodo = function (todo) {
