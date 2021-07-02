@@ -18,14 +18,14 @@
 ##### runs locally on localhost:8080
 ### Docker (Linux/WSL)
 ```bash
-git clone https://ithub.com:defurn/todo-angular.git
+git clone https://github.com:defurn/todo-angular.git
 cd todo-angular
 ./start.sh # build and run in container
 ```
 ### Node.js
 uses Express server
 ```bash
-git clone https://ithub.com:defurn/todo-angular.git
+git clone https://github.com:defurn/todo-angular.git
 cd todo-angular
 npm install
 npm start
@@ -33,4 +33,4 @@ npm start
 ### Online
 demo hosted on heroku [here](https://tranquil-mountain-17858.herokuapp.com/)  
 
-![alt text for screen readers](./Screenshot.png "TODO added feature screenshot")
+![TODO added feature screenshot](./Screenshot.png "TODO added feature screenshot")
