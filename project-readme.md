@@ -15,17 +15,19 @@ areas for improvement:
 
 ## Running the app
 runs locally on localhost:8080
-### Docker
+### Docker (Linux/WSL)
 ```bash
-git clone ...
-cd todo-mvc
-./start # build and run in container
+git clone https://ithub.com:defurn/todo-angular.git
+cd todo-angular
+./start.sh # build and run in container
 ```
 ### Node.js
+uses Express server
 ```bash
-git clone ...
-cd todo-mvc
+git clone https://ithub.com:defurn/todo-angular.git
+cd todo-angular
+npm install
 npm start
 ```
 ### online
-demo hosted on heroku [here](herokusomethingorother.herokuapp.com)
+demo hosted on heroku [here](https://tranquil-mountain-17858.herokuapp.com/)
