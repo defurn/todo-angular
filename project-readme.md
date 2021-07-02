@@ -2,17 +2,16 @@
 ## Front End from AngularJS Demo on [ToDoMVC.com](https://todomvc.com/examples/angularjs/#/) ([source repo](https://github.com/tastejs/todomvc/tree/gh-pages/examples/angularjs))    
 
 ### Added Feature: Tagging
-#### added tagging feature: 
-* in-line hashtags can be added on item creation
+#### feature: 
+* in-line hashtags can be added on todo-list item creation
 * item can be modified with more hashtags
-* click tag to filter the view for matching tags
-* works with multiple tags
-
+* tag can be cliscked to filter the view for items with matching tags
+* can filter by multiple tags
 #### limitations:
 * no backend implemented or integrated  
 * no tests written for new feature  
 #### areas for improvement:
-* design should be more immediately intuitive
+* design function should be more immediately intuitive
 * tags should have auto-completion if already extant
 
 ## Running the app
@@ -31,6 +30,7 @@ cd todo-angular
 npm install
 npm start
 ```
-### online
-demo hosted on heroku [here](https://tranquil-mountain-17858.herokuapp.com/)
-![alt text for screen readers](./Screenshot.png "Text to show on mouseover")
+### Online
+demo hosted on heroku [here](https://tranquil-mountain-17858.herokuapp.com/)  
+
+![alt text for screen readers](./Screenshot.png "TODO added feature screenshot")
