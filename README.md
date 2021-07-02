@@ -5,7 +5,7 @@
 #### feature: 
 * in-line hashtags can be added on todo-list item creation
 * item can be modified with more hashtags
-* tag can be cliscked to filter the view for items with matching tags
+* tag can be clicked to filter the view for items with matching tags
 * can filter by multiple tags
 #### limitations:
 * no backend implemented or integrated  
